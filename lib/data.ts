@@ -190,7 +190,7 @@ export const certificatesData = [
     title: "Campus Ambassador – TRYST’26, IIT Delhi (Offer Letter)",
     description: "Campus Ambassador – TRYST’26, IIT Delhi",
     tags: ["CAP", "IIT Delhi", "Performance"],
-    imageUrl: Parinda, // reusing existing image for placeholder
+    imageUrl: StarImg, // reusing existing image for placeholder
     imagePath: "public/Prem Singh.pdf",
   }
   {
