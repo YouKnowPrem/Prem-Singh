@@ -178,7 +178,7 @@ export const certificatesData = [
     title: "Google Skill Boost Program",
     description: "Legend Tier Winner for demonstrating excellent command of cloud technologies and GCP infrastructure.",
     tags: ["GCP", "Cloud Architecture", "Skill Boost"],
-    imageUrl: "public/google-uni-cert.png", , // reusing existing image for placeholder
+    imageUrl: "public/google-uni-cert.png", // reusing existing image for placeholder
     imagePath: "public/google-uni-cert.png",
   },
   {
