@@ -194,21 +194,21 @@ export const certificatesData = [
     description: "Campus Ambassador – TRYST’26, IIT Delhi",
     tags: ["CAP", "IIT Delhi", "Performance"],
     imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "public/Prem Singh.pdf",
+    imagePath: "public/Prem-Singh.pdf",
   },
   {
     title: "Certificate of Participation – BECon’26 (EDC IIT Delhi)",
     description: "Campus Ambassador – BECon’26 (Annual Business & Entrepreneurship Conclave), IIT Delhi",
     tags: ["CAP", "IIT Delhi", "Performance"],
     imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "public/Prem Singh_certificate.pdf",
+    imagePath: "public/Prem-Singh_certificate.pdf",
   },
   {
     title: "Google Gemini Certified – University Student",
     description: "Campus Ambassador – Entrepreneurship Development Cell (eDC), IIT Delhi (2026)",
     tags: ["Google", "AI", "Gemini"],
     imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "public/Google Cert.pdf",
+    imagePath: "public/Google-Cert.pdf",
   },
 ] as const;
 
