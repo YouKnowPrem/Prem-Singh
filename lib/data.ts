@@ -17,6 +17,8 @@ import WebPortDark from "@/public/WebPortfoliodark.png";
 import Webclock from "@/public/Webclock.png";
 import WhackImg from "@/public/Whack-a-Mole.png";
 import WorkClone from "@/public/WorkClone.png";
+import Historic from "@public/historic-cities.png";
+import Google from "@import Historic from "@public/historic-cities.png";
 
 export const links = [
   {
@@ -126,7 +128,7 @@ export const projectsData = [
     description:
       "Lead Developer – Historic Cities Jammu 2025 (Official Event Website)",
     tags: ["Nextjs", "React", "Javascript", "Framer Motion", "locomotive-scroll", "Tailwindcss", "Typescript"],
-    imageUrl: public/historic-cities.png,
+    imageUrl: Historic,
     imagePath: "https://historic-cities-jammu2025.vercel.app/"
   },
   {
@@ -176,7 +178,7 @@ export const certificatesData = [
     title: "Google Skill Boost Program",
     description: "Legend Tier Winner for demonstrating excellent command of cloud technologies and GCP infrastructure.",
     tags: ["GCP", "Cloud Architecture", "Skill Boost"],
-    imageUrl: public/466848e7-5253-425b-8763-b45360658464.png, // reusing existing image for placeholder
+    imageUrl: Google, // reusing existing image for placeholder
     imagePath: "public/466848e7-5253-425b-8763-b45360658464.png",
   },
   {
