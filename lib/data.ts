@@ -18,8 +18,7 @@ import WebPortDark from "@/public/WebPortfoliodark.png";
 import Webclock from "@/public/Webclock.png";
 import WhackImg from "@/public/Whack-a-Mole.png";
 import WorkClone from "@/public/WorkClone.png";
-import Historic from "@/public/historic-cities.png"; 
-import Google from "@public/google-uni-cert.png"; 
+import Historic from "@/public/historic-cities.png";  
 
 export const links = [
   {
@@ -179,8 +178,8 @@ export const certificatesData = [
     title: "Google Skill Boost Program",
     description: "Legend Tier Winner for demonstrating excellent command of cloud technologies and GCP infrastructure.",
     tags: ["GCP", "Cloud Architecture", "Skill Boost"],
-    imageUrl: Google, // reusing existing image for placeholder
-    imagePath: "public/466848e7-5253-425b-8763-b45360658464.png",
+    imageUrl: "public/google-uni-cert.png", , // reusing existing image for placeholder
+    imagePath: "public/google-uni-cert.png",
   },
   {
     title: "Campus Ambassador – eDC IIT Delhi (Offer Letter)",
