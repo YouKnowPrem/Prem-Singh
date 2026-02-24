@@ -122,20 +122,20 @@ export const projectsData = [
     imagePath: "https://parinda-pi.vercel.app"
   },
   {
-    title: "Work Studio Clone",
+    title: " Historic Cities Jammu 25",
     description:
-      "An Awwwards winning Work Studio design website, with a lot of animations and interactions.",
-    tags: ["Vite", "React", "Javascript", "Framer Motion", "locomotive-scroll", "Tailwindcss", "GSAP"],
-    imageUrl: WorkClone,
-    imagePath: "https://clone-works-studio.vercel.app"
+      "Lead Developer – Historic Cities Jammu 2025 (Official Event Website)",
+    tags: ["Nextjs", "React", "Javascript", "Framer Motion", "locomotive-scroll", "Tailwindcss", "Typescript"],
+    imageUrl: public/historic-cities.png,
+    imagePath: "https://historic-cities-jammu2025.vercel.app/"
   },
   {
-    title: "Interactive Star effect",
+    title: "Focus V1 – Productivity Timer App",
     description:
-      "This star will follow your lead till you hover your mouse on screen",
-    tags: ["Vite", "React", "Typescript", "Framer Motion", "Tailwindcss", 'GSAP'],
+      "Founder & Developer – Focus V1 (Flutter Productivity App)",
+    tags: ["App", "Focus", "Flutter", "Productivity"],
     imageUrl: StarImg,
-    imagePath: "https://youknowprem.github.io/starFollower"
+    imagePath: "https://focus-v1-ebon.vercel.app/"
   },
   {
     title: "Obys Clone",
@@ -176,23 +176,37 @@ export const certificatesData = [
     title: "Google Skill Boost Program",
     description: "Legend Tier Winner for demonstrating excellent command of cloud technologies and GCP infrastructure.",
     tags: ["GCP", "Cloud Architecture", "Skill Boost"],
-    imageUrl: Webclock, // reusing existing image for placeholder
-    imagePath: "https://cloud.google.com/training",
+    imageUrl: public/466848e7-5253-425b-8763-b45360658464.png, // reusing existing image for placeholder
+    imagePath: "public/466848e7-5253-425b-8763-b45360658464.png",
   },
   {
-    title: "Advanced React Patterns",
-    description: "Certified proficiency in crafting elegant, scalable, and reusable React components.",
-    tags: ["React", "Custom Hooks", "Performance"],
+    title: "Campus Ambassador – eDC IIT Delhi (Offer Letter)",
+    description: "Campus Ambassador – Entrepreneurship Development Cell (eDC), IIT Delhi (2026)",
+    tags: ["CAP", "IIT Delhi", "Performance"],
     imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "https://react.dev",
+    imagePath: "public/Campus_Ambassador_Offer_Letter_eDC.pdf",
   },
   {
-    title: "Technology Law Seminar",
-    description: "Participation certificate exploring the landscape of emerging digital governance and tech law frameworks.",
-    tags: ["Digital Governance", "Tech Law", "Policy Analysis"],
+    title: "Campus Ambassador – TRYST’26, IIT Delhi (Offer Letter)",
+    description: "Campus Ambassador – TRYST’26, IIT Delhi",
+    tags: ["CAP", "IIT Delhi", "Performance"],
     imageUrl: Parinda, // reusing existing image for placeholder
-    imagePath: "https://example.com/law",
+    imagePath: "public/Prem Singh.pdf",
   }
+  {
+    title: "Certificate of Participation – BECon’26 (EDC IIT Delhi)",
+    description: "Campus Ambassador – BECon’26 (Annual Business & Entrepreneurship Conclave), IIT Delhi",
+    tags: ["CAP", "IIT Delhi", "Performance"],
+    imageUrl: StarImg, // reusing existing image for placeholder
+    imagePath: "public/Prem Singh_certificate.pdf",
+  },
+  {
+    title: "Google Gemini Certified – University Student",
+    description: "Campus Ambassador – Entrepreneurship Development Cell (eDC), IIT Delhi (2026)",
+    tags: ["Google", "AI", "Gemini"],
+    imageUrl: StarImg, // reusing existing image for placeholder
+    imagePath: "public/Google Cert.pdf",
+  },
 ] as const;
 
 export const gamesData = [
@@ -243,18 +257,16 @@ export const skillsData = [
   "React",
   "Next.js",
   "TailwindCSS",
-  "Three.js",
 
   // Backend & Tools
   "Node.js",
-  "Git",
   "GitHub",
   "Google Cloud Platform",
 
   // Development Practices
   "Open Source Contribution",
   "Repository Forking",
-  "Kiro IDE",
+  "Kiro IDE","Antigravity IDE",
   "Local LLM Installation",
 
   // AI & Modern Skills
@@ -265,12 +277,10 @@ export const skillsData = [
   // Legal-Tech Skills
   "Legal Research",
   "Policy Analysis",
-  "Digital Governance",
   "Technology Law",
 
   // Soft Skills
   "Critical Thinking",
-  "Analytical Reasoning",
   "Strategic Planning",
   "Problem-Solving",
   "Ethical Decision-Making",
