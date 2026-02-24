@@ -5,13 +5,8 @@ export default function Footer() {
     <footer className="mb-10 px-4 text-center text-gray-500">
       {/* //footer */}
       <small className="mb-2 block text-xs">
-        &copy; 2024. Rights belong to dev's laptop then any other one💻| see you soon, bye 👋
+        &copy; 2026. Made with 💖| Prem Se 👋
       </small>
-      <p className="text-xs">
-        <span className="font-semibold">About this website:</span> built with
-        React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS,
-        Framer Motion, React Email & Resend, Vercel hosting.
-      </p>
     </footer>
   );
 }
