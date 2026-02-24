@@ -3,8 +3,9 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import WelcomeImg from "@/public/Welcome.png";
 
+// Images
+import WelcomeImg from "@/public/Welcome.png";
 import FlappyImg from "@/public/Flappy bird .png";
 import MaclarenWeb from "@/public/MaclarenWeb.png";
 import MoseosClone from "@/public/MoseosClone.png";
@@ -17,8 +18,8 @@ import WebPortDark from "@/public/WebPortfoliodark.png";
 import Webclock from "@/public/Webclock.png";
 import WhackImg from "@/public/Whack-a-Mole.png";
 import WorkClone from "@/public/WorkClone.png";
-import Historic from "@public/historic-cities.png";
-import Google from "@import Historic from "@public/historic-cities.png";
+import Historic from "@/public/historic-cities.png"; 
+import Google from "@/public/Google Cert.pdf"; 
 
 export const links = [
   {
