@@ -129,7 +129,7 @@ export default function Intro() {
                 gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] 
                 active:scale-105 transition cursor-pointer borderBlack 
                 dark:bg-white/10 dark:text-white/60'
-                    href='https://linkedin.com/in/yourprofile' target='_blank'
+                    href='https://www.linkedin.com/in/the-prem-singh/' target='_blank'
                 >
                     <BsLinkedin />
                 </a>
