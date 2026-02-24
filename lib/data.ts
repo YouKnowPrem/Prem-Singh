@@ -195,7 +195,7 @@ export const certificatesData = [
     tags: ["CAP", "IIT Delhi", "Performance"],
     imageUrl: StarImg, // reusing existing image for placeholder
     imagePath: "public/Prem Singh.pdf",
-  }
+  },
   {
     title: "Certificate of Participation – BECon’26 (EDC IIT Delhi)",
     description: "Campus Ambassador – BECon’26 (Annual Business & Entrepreneurship Conclave), IIT Delhi",
