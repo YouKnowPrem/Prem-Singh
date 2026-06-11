@@ -1,26 +1,48 @@
-import About from "@/components/about";
-import Contact from "@/components/contact";
-import Experience from "@/components/experience";
-import Games from "@/components/games";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
+import ExperimentLab from "@/components/experiment-lab";
 import Skills from "@/components/skills";
+import KnowledgeGarden from "@/components/knowledge-garden";
+import Experience from "@/components/experience";
 import Certificates from "@/components/certificates";
+import Verdict from "@/components/verdict";
+import Contact from "@/components/contact";
+import CommandPalette from "@/components/command-palette";
+import TerminalWidget from "@/components/terminal-widget";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
+    <main className="flex flex-col items-center justify-center min-h-screen">
+      {/* Bio / Dossier Intro */}
       <Intro />
-      <SectionDivider />
-      <About />
+      
+      {/* Featured Projects / Case Files */}
       <Projects />
-      <Games />
+      
+      {/* Skills Assessment Matrix */}
       <Skills />
+
+      {/* Games & Prototypes / Experiment Lab */}
+      <ExperimentLab />
+      
+      {/* Blog & Essays / Knowledge Garden */}
+      <KnowledgeGarden />
+      
+      {/* Chronological Journey / Timeline */}
       <Experience />
-      <SectionDivider />
+
+      {/* Credentials Exhibits / Certificates */}
       <Certificates />
+
+      {/* Dynamic Legal Order / Verdict Card */}
+      <Verdict />
+
+      {/* Subpoena Contact Form / Contact */}
       <Contact />
+
+      {/* Floating Utilities */}
+      <CommandPalette />
+      <TerminalWidget />
     </main>
   );
 }

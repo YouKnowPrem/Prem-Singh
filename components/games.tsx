@@ -16,7 +16,7 @@ export default function Games() {
 
   useEffect(() => {
     if (inView) {
-      setActiveSection("Games");
+      setActiveSection("Experiment Lab");
     }
   }, [inView, setActiveSection]);
 

@@ -8,6 +8,7 @@ import { HiExternalLink } from 'react-icons/hi';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useCaseFile } from '@/context/case-file-context';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,7 @@ type CertificateProps = (typeof certificatesData)[number] & {
 export default function Certificate({ title, description, tags, imageUrl, imagePath, index }:
     CertificateProps) {
     const ref = useRef<HTMLDivElement>(null);
+    const { caseFileMode } = useCaseFile();
 
     useGSAP(() => {
         gsap.from(ref.current, {
@@ -34,39 +36,74 @@ export default function Certificate({ title, description, tags, imageUrl, imageP
         });
     }, { scope: ref });
 
+    if (caseFileMode) {
+        // --- CASE FILE MODE: Verified Exhibit Credential ---
+        return (
+            <div ref={ref} className="group mb-4 last:mb-0 font-mono text-xs">
+                <Link href={imagePath} target="_blank" rel="noopener noreferrer">
+                    <section className="bg-[#fdfcf7] hover:bg-[#f8f6ee] dark:bg-[#1e1b19] dark:hover:bg-[#25211e] border border-[#cbd2c0] dark:border-[#3a2f26] p-4 rounded-lg flex flex-col sm:flex-row gap-4 items-center justify-between transition-colors shadow-sm">
+                        <div className="flex items-center gap-3">
+                            <span className="case-stamp case-stamp-green shrink-0 scale-90">
+                                VERIFIED
+                            </span>
+                            <div>
+                                <h3 className="font-black uppercase text-zinc-950 dark:text-white flex items-center gap-1 hover:text-amber-500 transition-colors">
+                                    EXHIBIT C-0{index + 1}: {title}
+                                    <HiExternalLink className="w-3.5 h-3.5" />
+                                </h3>
+                                <p className="text-zinc-500 dark:text-zinc-400 text-[10px] mt-0.5 uppercase">
+                                    {description}
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex flex-wrap gap-1 mt-2 sm:mt-0">
+                            {tags.map((tag, i) => (
+                                <span key={i} className="bg-[#ebdcb9] text-[#7c6344] dark:bg-[#3e342a] dark:text-[#a0896d] px-1.5 py-0.5 rounded text-[9px] uppercase">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </section>
+                </Link>
+            </div>
+        );
+    }
+
+    // --- STANDARD MODE: Sleek publication-style card ---
     return (
-        <div ref={ref} className='group mb-6 sm:mb-8 last:mb-0'>
+        <div ref={ref} className='group mb-4 last:mb-0'>
             <Link href={imagePath} target="_blank" rel="noopener noreferrer">
                 <section
-                    className='group bg-gray-100 max-w-[42rem] border 
-                    border-black/5 overflow-hidden 
-                    relative hover:bg-gray-200 
-                    transition-all duration-300 rounded-xl
-                    dark:text-white dark:bg-white/10 
-                    dark:hover:bg-white/20 hover:shadow-lg
-                    flex flex-col sm:flex-row sm:h-[16rem]'
+                    className='group bg-white max-w-[50rem] border border-zinc-200/60 overflow-hidden relative hover:bg-zinc-50 transition-all duration-300 rounded-xl dark:text-white dark:bg-zinc-900/50 dark:border-zinc-800 dark:hover:bg-zinc-850 hover:shadow-md flex flex-col sm:flex-row sm:h-[10rem]'
                 >
-                    <div className="relative h-48 sm:h-full sm:w-[16rem] overflow-hidden flex-shrink-0">
-                        <Image src={imageUrl} alt={title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" quality={95} />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent sm:hidden" />
-                        <HiExternalLink className="absolute top-4 right-4 w-6 h-6 text-white drop-shadow-lg sm:hidden" />
+                    <div className="relative h-36 sm:h-full sm:w-[12rem] overflow-hidden flex-shrink-0">
+                        <Image 
+                            src={typeof imageUrl === 'string' && imageUrl.startsWith("public/") ? "/" + imageUrl.substring(7) : imageUrl} 
+                            alt={title} 
+                            fill 
+                            className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                            quality={95} 
+                            sizes="192px" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent sm:hidden" />
+                        <HiExternalLink className="absolute top-3 right-3 w-5 h-5 text-white drop-shadow-md sm:hidden" />
                     </div>
 
-                    <div className='pt-4 pb-6 px-5 sm:px-8 flex flex-col h-full justify-between flex-grow'>
+                    <div className='p-5 flex flex-col justify-between flex-grow h-full'>
                         <div>
-                            <div className="flex items-start justify-between mb-2">
-                                <h3 className='text-xl sm:text-2xl font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
+                            <div className="flex items-start justify-between">
+                                <h3 className='text-base sm:text-lg font-bold text-zinc-950 dark:text-white group-hover:text-amber-500 transition-colors flex items-center gap-1.5'>
                                     {title}
+                                    <HiExternalLink className="hidden sm:block w-4 h-4 text-zinc-400 group-hover:text-amber-500 transition-colors" />
                                 </h3>
-                                <HiExternalLink className="hidden sm:block w-5 h-5 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex-shrink-0 ml-2" />
                             </div>
-                            <p className='mt-2 leading-relaxed text-gray-700 dark:text-white/70 text-sm sm:text-base'>
+                            <p className='mt-1 leading-relaxed text-zinc-650 dark:text-zinc-400 text-xs sm:text-sm'>
                                 {description}
                             </p>
                         </div>
-                        <ul className='flex flex-wrap mt-4 gap-2'>
+                        <ul className='flex flex-wrap gap-1.5 mt-3 sm:mt-0'>
                             {tags.map((tag, i) => (
-                                <li className='bg-black/[0.7] px-2 py-1 text-[0.65rem] sm:text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70' key={i}>
+                                <li className='bg-zinc-100 px-2 py-0.5 text-[9px] uppercase tracking-wider text-zinc-500 rounded border border-zinc-200/10 dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-800' key={i}>
                                     {tag}
                                 </li>
                             ))}

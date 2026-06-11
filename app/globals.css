@@ -88,3 +88,196 @@ html.dark {
     text-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.6);
   }
 }
+
+/* --- CASE FILE MODE STYLES & OVERRIDES --- */
+
+/* Scrollbar customization in Case File Mode */
+html.case-file {
+  scrollbar-color: #8c7d66 #f5efe2;
+}
+html.case-file.dark {
+  scrollbar-color: #524738 #1f1a16;
+}
+
+/* Case File mode root overrides */
+.case-file body {
+  background-color: #f5efe2 !important;
+  background-image: 
+    radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0),
+    radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0) !important;
+  background-size: 24px 24px !important;
+  background-position: 0 0, 12px 12px !important;
+  color: #1f1a16 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.case-file .dec-glow {
+  opacity: 0.05 !important;
+  mix-blend-mode: multiply;
+  background-color: #dfceab !important;
+}
+
+/* Case File mode dark overrides */
+.case-file.dark body {
+  background-color: #1b1714 !important;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0),
+    radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0) !important;
+  background-size: 24px 24px !important;
+  background-position: 0 0, 12px 12px !important;
+  color: #ebdcd0 !important;
+}
+
+.case-file.dark .dec-glow {
+  opacity: 0.1 !important;
+  mix-blend-mode: screen;
+  background-color: #443521 !important;
+}
+
+/* Typewriter & editorial text styles */
+.case-file h1, .case-file h2, .case-file h3, .case-file h4, .case-file h5 {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 700 !important;
+}
+
+.case-file .font-handwriting {
+  font-family: 'Caveat', cursive !important;
+}
+
+/* Document Redacted Text */
+.redacted-block {
+  background-color: #1f1a16;
+  color: #1f1a16;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 0.15rem;
+  display: inline-block;
+  user-select: none;
+}
+.redacted-block:hover, .redacted-block.revealed {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: inherit;
+  user-select: text;
+}
+.dark .redacted-block {
+  background-color: #ebdcd0;
+  color: #ebdcd0;
+}
+.dark .redacted-block:hover, .dark .redacted-block.revealed {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: inherit;
+  user-select: text;
+}
+
+/* Vintage Official Stamps */
+.case-stamp {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  user-select: none;
+  font-size: 0.85rem;
+  border: 4px double currentColor;
+}
+.case-stamp-red {
+  color: #dc2626;
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.1);
+  background-color: rgba(220, 38, 38, 0.02);
+}
+.case-stamp-green {
+  color: #16a34a;
+  box-shadow: 0 0 0 1px rgba(22, 163, 74, 0.1);
+  background-color: rgba(22, 163, 74, 0.02);
+}
+.case-stamp-blue {
+  color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1);
+  background-color: rgba(37, 99, 235, 0.02);
+}
+
+/* Folder Staple Clip */
+.folder-clip {
+  position: relative;
+}
+.folder-clip::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 55px;
+  height: 18px;
+  background: linear-gradient(to right, #94a3b8, #cbd5e1, #94a3b8);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Legal Pleading Paper Styling */
+.legal-pleading {
+  background-color: #fdfbf7;
+  color: #1c1917;
+  font-family: 'JetBrains Mono', monospace;
+  border-left: 2px solid #ef4444;
+  border-right: 1px solid #e5e7eb;
+  padding-left: 3rem;
+  padding-right: 1.5rem;
+  position: relative;
+}
+.dark .legal-pleading {
+  background-color: #1e1b19;
+  color: #ebdfd5;
+  border-left: 2px solid #ef4444;
+  border-right: 1px solid #2d2926;
+}
+.legal-pleading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.5rem;
+  width: 1px;
+  background-color: rgba(239, 68, 68, 0.3);
+}
+
+/* CRT Screen Effect */
+.crt-terminal {
+  position: relative;
+  overflow: hidden;
+  background-color: #0b0f17;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.crt-terminal::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(34, 197, 94, 0.04), rgba(0, 255, 0, 0.01), rgba(34, 197, 94, 0.04));
+  z-index: 10;
+  background-size: 100% 4px, 4px 100%;
+  pointer-events: none;
+}
+.crt-glow {
+  text-shadow: 0 0 5px rgba(34, 197, 94, 0.8);
+}
+
+/* Spring Entry Animations */
+@keyframes slide-in-bottom {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-enter {
+  animation: slide-in-bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-out-left {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+.animate-leave {
+  animation: fade-out-left 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
