@@ -7,6 +7,7 @@ import { HiExternalLink } from 'react-icons/hi';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import clsx from 'clsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +15,7 @@ type CertificateProps = (typeof certificatesData)[number] & {
     index: number;
 };
 
-export default function Certificate({ title, description, tags, imagePath, index }:
+export default function Certificate({ title, description, tags, imagePath, category, index }:
     CertificateProps) {
     const ref = useRef<HTMLDivElement>(null);
 
@@ -33,13 +34,27 @@ export default function Certificate({ title, description, tags, imagePath, index
         });
     }, { scope: ref });
 
+    const getStampDetails = () => {
+        switch (category) {
+            case "Pitch Deck":
+                return { text: "PITCH DECK", className: "case-stamp-blue" };
+            case "Offer Letter":
+                return { text: "OFFER LETTER", className: "case-stamp-red" };
+            case "Certificate":
+            default:
+                return { text: "VERIFIED", className: "case-stamp-green" };
+        }
+    };
+    
+    const stamp = getStampDetails();
+
     return (
         <div ref={ref} className="group mb-4 last:mb-0 font-mono text-xs">
             <Link href={imagePath} target="_blank" rel="noopener noreferrer">
                 <section className="bg-[#fdfcf7] hover:bg-[#f8f6ee] dark:bg-[#1e1b19] dark:hover:bg-[#25211e] border border-[#cbd2c0] dark:border-[#3a2f26] p-4 rounded-lg flex flex-col sm:flex-row gap-4 items-center justify-between transition-colors shadow-sm">
                     <div className="flex items-center gap-3">
-                        <span className="case-stamp case-stamp-green shrink-0 scale-90">
-                            VERIFIED
+                        <span className={clsx("case-stamp shrink-0 scale-90 font-black tracking-widest", stamp.className)}>
+                            {stamp.text}
                         </span>
                         <div>
                             <h3 className="font-black uppercase text-zinc-950 dark:text-white flex items-center gap-1 hover:text-amber-500 transition-colors">

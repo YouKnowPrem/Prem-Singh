@@ -171,39 +171,52 @@ export const projectsData = [
 
 export const certificatesData = [
   {
-    title: "Google Skill Boost Program",
-    description: "Legend Tier Winner for demonstrating excellent command of cloud technologies and GCP infrastructure.",
-    tags: ["GCP", "Cloud Architecture", "Skill Boost"],
-    imageUrl: "public/google-uni-cert.png", // reusing existing image for placeholder
-    imagePath: "public/google-uni-cert.png",
+    title: "Strategic Project Briefing (Pitch Deck)",
+    description: "Official pitch deck detailing computational law platforms, target markets, operational structures, and roadmap.",
+    tags: ["Pitch Deck", "Business Strategy", "Product Design"],
+    imageUrl: "/StarEffect.png",
+    imagePath: "/Pitch Deck_Prem.pdf",
+    category: "Pitch Deck",
   },
   {
-    title: "Campus Ambassador – eDC IIT Delhi (Offer Letter)",
-    description: "Campus Ambassador – Entrepreneurship Development Cell (eDC), IIT Delhi (2026)",
-    tags: ["CAP", "IIT Delhi", "Performance"],
-    imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "public/Campus_Ambassador_Offer_Letter_eDC.pdf",
+    title: "Campus Ambassador – eDC IIT Delhi",
+    description: "Selected as Campus Ambassador for the Entrepreneurship Development Cell (eDC), IIT Delhi (2026).",
+    tags: ["Offer Letter", "IIT Delhi", "Leadership"],
+    imageUrl: "/StarEffect.png",
+    imagePath: "/Campus_Ambassador_Offer_Letter_eDC.pdf",
+    category: "Offer Letter",
   },
   {
-    title: "Campus Ambassador – TRYST’26, IIT Delhi (Offer Letter)",
-    description: "Campus Ambassador – TRYST’26, IIT Delhi",
-    tags: ["CAP", "IIT Delhi", "Performance"],
-    imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "public/Prem-Singh.pdf",
+    title: "Campus Ambassador – TRYST’26, IIT Delhi",
+    description: "Selected as Campus Ambassador for TRYST’26, the annual technical festival of IIT Delhi.",
+    tags: ["Offer Letter", "IIT Delhi", "Coordination"],
+    imageUrl: "/StarEffect.png",
+    imagePath: "/Prem-Singh.pdf",
+    category: "Offer Letter",
   },
   {
-    title: "Certificate of Participation – BECon’26 (EDC IIT Delhi)",
-    description: "Campus Ambassador – BECon’26 (Annual Business & Entrepreneurship Conclave), IIT Delhi",
-    tags: ["CAP", "IIT Delhi", "Performance"],
-    imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "public/Prem-Singh_certificate.pdf",
+    title: "Certificate of Participation – BECon’26",
+    description: "Participated as Campus Ambassador in BECon’26, organized by the Entrepreneurship Development Cell, IIT Delhi.",
+    tags: ["Certificate", "IIT Delhi", "Business Conclave"],
+    imageUrl: "/StarEffect.png",
+    imagePath: "/Prem-Singh_certificate.pdf",
+    category: "Certificate",
   },
   {
     title: "Google Gemini Certified – University Student",
-    description: "Campus Ambassador – Entrepreneurship Development Cell (eDC), IIT Delhi (2026)",
-    tags: ["Google", "AI", "Gemini"],
-    imageUrl: StarImg, // reusing existing image for placeholder
-    imagePath: "public/Google-Cert.pdf",
+    description: "Certified under the Google Gemini University program for artificial intelligence competencies.",
+    tags: ["Certificate", "AI", "Google Gemini"],
+    imageUrl: "/StarEffect.png",
+    imagePath: "/Google-Cert.pdf",
+    category: "Certificate",
+  },
+  {
+    title: "Google Skill Boost Program",
+    description: "Legend Tier Winner for demonstrating excellent command of cloud technologies and Google Cloud Platform infrastructure.",
+    tags: ["Certificate", "GCP", "Cloud Infrastructure"],
+    imageUrl: "/google-uni-cert.png",
+    imagePath: "/google-uni-cert.png",
+    category: "Certificate",
   },
 ] as const;
 
