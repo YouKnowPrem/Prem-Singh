@@ -41,7 +41,7 @@ export const featuredCases = [
     verdict: "In Progress",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion", "Lenis"],
     imagePath: "#",
-    imageUrl: "/WebPortfolioDark.png",
+    imageUrl: "/WebPortfoliodark.png",
   },
   {
     id: "case-004",

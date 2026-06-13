@@ -180,7 +180,7 @@ TRAITS: Relentlessly curious, analytical, experimental.`,
       <AnimatePresence>
         {terminalOpen && (
           <motion.div
-            className={`fixed z-[9995] bottom-20 left-6 w-[90vw] max-w-[550px] overflow-hidden rounded-xl crt-terminal border border-zinc-800 shadow-2xl transition-all duration-300 ${
+            className={`fixed z-[9995] bottom-20 left-4 sm:left-6 w-[calc(100vw-2rem)] sm:w-[90vw] max-w-[550px] overflow-hidden rounded-xl crt-terminal border border-zinc-800 shadow-2xl transition-all duration-300 ${
               isMinimized ? "h-11" : "h-[360px]"
             }`}
             initial={{ opacity: 0, y: 50, scale: 0.95 }}

@@ -1,6 +1,6 @@
 import Header from '@/components/header'
 import './globals.css'
-import { Inter, Lora, Courier_Prime } from 'next/font/google'
+import { Inter, Playfair_Display, JetBrains_Mono, Caveat } from 'next/font/google'
 import ActiveSectionContextProvider from '@/context/active-section-context'
 import ThemeContextProvider from '@/context/theme-context'
 import CaseFileContextProvider from '@/context/case-file-context'
@@ -9,8 +9,9 @@ import Footer from '@/components/footer'
 import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
-const lora = Lora({ subsets: ['latin'], variable: '--font-serif' })
-const courier = Courier_Prime({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-mono' })
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' })
+const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
+const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting' })
 
 export const metadata = {
   title: 'The Curious Case of Prem Singh | Portfolio',
@@ -24,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth case-file">
-      <body className={`${inter.variable} ${lora.variable} ${courier.variable} font-sans bg-gray-50 
+      <body className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} ${caveat.variable} font-sans bg-gray-50 
       text-gray-950 relative
       pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 min-h-screen transition-colors duration-300`}>
         <div className='bg-[#fbe2e3] absolute top-[-6rem] -z-10

@@ -46,7 +46,6 @@ export default function Project({
 
   return (
     <motion.div
-      layout
       className={clsx(
         "w-full rounded-lg border text-left font-mono overflow-hidden transition-all duration-300 shadow-sm",
         isExpanded
