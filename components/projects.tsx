@@ -5,9 +5,7 @@ import SectionHeading from "./section-heading";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import { useCaseFile } from "@/context/case-file-context";
 
-// Featured Case Files as requested by the brief
 export const featuredCases = [
   {
     id: "case-001",
@@ -43,7 +41,7 @@ export const featuredCases = [
     verdict: "In Progress",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion", "Lenis"],
     imagePath: "#",
-    imageUrl: "/WebPortfoliodark.png",
+    imageUrl: "/WebPortfolioDark.png",
   },
   {
     id: "case-004",
@@ -61,19 +59,16 @@ export const featuredCases = [
 
 export default function Projects() {
   const { ref } = useSectionInView("Case Files", 0.3);
-  const { caseFileMode } = useCaseFile();
 
   return (
     <section ref={ref} id="cases" className="scroll-mt-28 mb-28 max-w-[50rem] w-full px-4">
       <SectionHeading>
-        {caseFileMode ? "FEATURED CASE FILES" : "Featured Case Files"}
+        FEATURED CASE FILES
       </SectionHeading>
       
-      {caseFileMode && (
-        <div className="text-center font-mono text-[10px] uppercase tracking-widest text-[#7c6344] dark:text-[#a0896d] mb-6 -mt-4">
-          WARNING: REVIEWING EVIDENCE FILES INCREASES CASE PROGRESS
-        </div>
-      )}
+      <div className="text-center font-mono text-[10px] uppercase tracking-widest text-[#7c6344] dark:text-[#a0896d] mb-6 -mt-4">
+        WARNING: REVIEWING EVIDENCE FILES INCREASES CASE PROGRESS
+      </div>
 
       <motion.div
         initial={{ opacity: 0 }}

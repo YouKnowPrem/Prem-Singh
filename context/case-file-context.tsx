@@ -64,7 +64,7 @@ export default function CaseFileContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [caseFileMode, setCaseFileMode] = useState<boolean>(false);
+  const [caseFileMode, setCaseFileMode] = useState<boolean>(true);
   const [unlockedAchievements, setUnlockedAchievements] = useState<string[]>([]);
   const [terminalOpen, setTerminalOpen] = useState<boolean>(false);
   const [visitedSections, setVisitedSections] = useState<string[]>(["Home"]);
@@ -75,11 +75,8 @@ export default function CaseFileContextProvider({
 
   // Load state from localStorage on mount
   useEffect(() => {
-    const localMode = window.localStorage.getItem("caseFileMode");
-    if (localMode === "true") {
-      setCaseFileMode(true);
-      document.documentElement.classList.add("case-file");
-    }
+    // Unconditionally add case-file class
+    document.documentElement.classList.add("case-file");
 
     const localAchievements = window.localStorage.getItem("achievements");
     if (localAchievements) {
@@ -103,17 +100,7 @@ export default function CaseFileContextProvider({
   }, []);
 
   const toggleCaseFileMode = () => {
-    setCaseFileMode((prev) => {
-      const next = !prev;
-      window.localStorage.setItem("caseFileMode", String(next));
-      if (next) {
-        document.documentElement.classList.add("case-file");
-        unlockAchievement("case-opened");
-      } else {
-        document.documentElement.classList.remove("case-file");
-      }
-      return next;
-    });
+    // Standard mode is removed, caseFileMode remains always active
   };
 
   const unlockAchievement = (id: string) => {

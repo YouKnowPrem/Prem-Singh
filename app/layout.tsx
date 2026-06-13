@@ -2,9 +2,9 @@ import Header from '@/components/header'
 import './globals.css'
 import { Inter, Lora, Courier_Prime } from 'next/font/google'
 import ActiveSectionContextProvider from '@/context/active-section-context'
-import ThemeSwitch from '@/components/theme-switch'
 import ThemeContextProvider from '@/context/theme-context'
 import CaseFileContextProvider from '@/context/case-file-context'
+import SmoothScroll from '@/components/smooth-scroll'
 import Footer from '@/components/footer'
 import { Toaster } from 'react-hot-toast'
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth case-file">
       <body className={`${inter.variable} ${lora.variable} ${courier.variable} font-sans bg-gray-50 
       text-gray-950 relative
       pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 min-h-screen transition-colors duration-300`}>
@@ -38,12 +38,13 @@ export default function RootLayout({
         <ThemeContextProvider>
           <CaseFileContextProvider>
             <ActiveSectionContextProvider>
-              <Header />
-              {children}
-              <Footer />
+              <SmoothScroll>
+                <Header />
+                {children}
+                <Footer />
 
-              <Toaster position="bottom-right" />
-              <ThemeSwitch />
+                <Toaster position="bottom-right" />
+              </SmoothScroll>
             </ActiveSectionContextProvider>
           </CaseFileContextProvider>
         </ThemeContextProvider>
