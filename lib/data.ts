@@ -34,10 +34,6 @@ export const links = [
     hash: "#lab",
   },
   {
-    name: "Briefing",
-    hash: "#briefing",
-  },
-  {
     name: "Articles",
     hash: "#articles",
   },

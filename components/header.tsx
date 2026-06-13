@@ -14,7 +14,6 @@ export const navLinks = [
   { name: "Home", hash: "#home" },
   { name: "Case Files", hash: "#cases" },
   { name: "Experiment Lab", hash: "#lab" },
-  { name: "Briefing", hash: "#briefing" },
   { name: "Articles", hash: "#articles" },
   { name: "Timeline", hash: "#timeline" },
   { name: "Contact", hash: "#contact" },

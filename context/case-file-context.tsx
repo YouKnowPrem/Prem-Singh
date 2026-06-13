@@ -188,19 +188,19 @@ export default function CaseFileContextProvider({
   };
 
   // Calculate investigation progress dynamically out of 100
-  // Visiting sections (up to 7 sections): 28% (4% each)
-  // Clicked redacted text in bio: 22%
+  // Visiting sections (up to 6 sections): 30% (5% each)
+  // Clicked redacted text in bio: 20%
   // Viewed all 4 projects: 20% (5% each)
   // Opened/used terminal: 15%
   // Reached verdict: 15%
-  const sectionsCount = Math.min(visitedSections.length, 7); // max 7
-  const redactedFactor = clickedRedactedText ? 22 : 0;
+  const sectionsCount = Math.min(visitedSections.length, 6); // max 6
+  const redactedFactor = clickedRedactedText ? 20 : 0;
   const projectsFactor = Math.min(viewedProjects.length, 4) * 5; // max 20
   const terminalFactor = terminalUsed ? 15 : 0;
   const verdictFactor = verdictReached ? 15 : 0;
 
   const investigationProgress = Math.min(
-    sectionsCount * 4 + redactedFactor + projectsFactor + terminalFactor + verdictFactor,
+    sectionsCount * 5 + redactedFactor + projectsFactor + terminalFactor + verdictFactor,
     100
   );
 
