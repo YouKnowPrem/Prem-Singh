@@ -34,6 +34,10 @@ export const links = [
     hash: "#lab",
   },
   {
+    name: "Briefing",
+    hash: "#briefing",
+  },
+  {
     name: "Articles",
     hash: "#articles",
   },
@@ -272,6 +276,7 @@ export const skillsData = [
   "Legal Research",
   "Policy Analysis",
   "Technology Law",
+  "PitchDeck Making",
 
   // Soft Skills
   "Critical Thinking",

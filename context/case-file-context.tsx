@@ -10,11 +10,6 @@ type Achievement = {
 };
 
 export const ACHIEVEMENTS: Record<string, Achievement> = {
-  "case-opened": {
-    id: "case-opened",
-    title: "Case Opened",
-    description: "Switched to Case File Mode for the first time.",
-  },
   "dossier-unlocked": {
     id: "dossier-unlocked",
     title: "Document Declassified",
@@ -109,7 +104,7 @@ export default function CaseFileContextProvider({
       const next = [...prev, id];
       window.localStorage.setItem("achievements", JSON.stringify(next));
 
-      // Display customized Awwwards style notification
+      // Display customized Awwwards/Retro Case File style notification
       const ach = ACHIEVEMENTS[id];
       if (ach) {
         toast.custom(
@@ -117,37 +112,37 @@ export default function CaseFileContextProvider({
             <div
               className={`${
                 t.visible ? "animate-enter" : "animate-leave"
-              } max-w-md w-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl rounded-xl pointer-events-auto flex ring-1 ring-black ring-opacity-5 overflow-hidden`}
+              } max-w-md w-full bg-[#fdfcf7] dark:bg-[#1e1b19] border-2 border-[#cbd2c0] dark:border-[#3a2f26] shadow-2xl rounded-lg pointer-events-auto flex overflow-hidden font-mono text-xs`}
             >
               <div className="flex-1 w-0 p-4">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 pt-0.5">
-                    <span className="text-2xl">🏆</span>
+                  <div className="flex-shrink-0 pt-0.5 text-lg">
+                    📁
                   </div>
                   <div className="ml-3 flex-1">
-                    <p className="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold">
-                      Case Evidence Logged
-                    </p>
-                    <p className="text-sm font-bold text-zinc-950 dark:text-white mt-0.5">
+                    <span className="case-stamp case-stamp-red text-[8px] py-0.5 px-1.5 mb-1 scale-90 -translate-x-1.5 inline-block font-bold">
+                      EVIDENCE LOGGED
+                    </span>
+                    <p className="text-sm font-black text-zinc-950 dark:text-white mt-1 uppercase">
                       {ach.title}
                     </p>
-                    <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400 font-mono">
+                    <p className="mt-1 text-xs text-[#7c6344] dark:text-[#a0896d]">
                       {ach.description}
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="flex border-l border-zinc-100 dark:border-zinc-800">
+              <div className="flex border-l border-[#cbd2c0] dark:border-[#3a2f26]">
                 <button
                   onClick={() => toast.dismiss(t.id)}
-                  className="w-full border border-transparent rounded-none rounded-r-xl p-4 flex items-center justify-center text-xs font-mono uppercase font-bold text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white focus:outline-none"
+                  className="w-full px-4 flex items-center justify-center font-bold text-red-650 hover:bg-[#ebdcb9]/40 dark:hover:bg-[#3e342a]/40 uppercase tracking-widest text-[9px] focus:outline-none"
                 >
                   Dismiss
                 </button>
               </div>
             </div>
           ),
-          { duration: 4000 }
+          { duration: 5000 }
         );
       }
       return next;
@@ -193,21 +188,19 @@ export default function CaseFileContextProvider({
   };
 
   // Calculate investigation progress dynamically out of 100
-  // Visiting sections (up to 6 sections): 30% (5% each)
-  // Switched to Case File Mode at least once: 10%
-  // Clicked redacted text in bio: 20%
+  // Visiting sections (up to 7 sections): 28% (4% each)
+  // Clicked redacted text in bio: 22%
   // Viewed all 4 projects: 20% (5% each)
-  // Opened/used terminal: 10%
-  // Reached verdict: 10%
-  const sectionsCount = visitedSections.length; // max 6
-  const caseModeFactor = caseFileMode || unlockedAchievements.includes("case-opened") ? 10 : 0;
-  const redactedFactor = clickedRedactedText ? 20 : 0;
+  // Opened/used terminal: 15%
+  // Reached verdict: 15%
+  const sectionsCount = Math.min(visitedSections.length, 7); // max 7
+  const redactedFactor = clickedRedactedText ? 22 : 0;
   const projectsFactor = Math.min(viewedProjects.length, 4) * 5; // max 20
-  const terminalFactor = terminalUsed ? 10 : 0;
-  const verdictFactor = verdictReached ? 10 : 0;
+  const terminalFactor = terminalUsed ? 15 : 0;
+  const verdictFactor = verdictReached ? 15 : 0;
 
   const investigationProgress = Math.min(
-    sectionsCount * 5 + caseModeFactor + redactedFactor + projectsFactor + terminalFactor + verdictFactor,
+    sectionsCount * 4 + redactedFactor + projectsFactor + terminalFactor + verdictFactor,
     100
   );
 

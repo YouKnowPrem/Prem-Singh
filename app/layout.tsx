@@ -43,7 +43,13 @@ export default function RootLayout({
                 {children}
                 <Footer />
 
-                <Toaster position="bottom-right" />
+                <Toaster
+                  position="bottom-right"
+                  toastOptions={{
+                    className: "font-mono text-xs border border-[#cbd2c0] dark:border-[#3a2f26] bg-[#fdfcf7] dark:bg-[#1e1b19] text-[#1f1a16] dark:text-[#ebdcd0] rounded-lg shadow-md",
+                    duration: 5000,
+                  }}
+                />
               </SmoothScroll>
             </ActiveSectionContextProvider>
           </CaseFileContextProvider>

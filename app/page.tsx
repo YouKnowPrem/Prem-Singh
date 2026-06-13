@@ -2,6 +2,7 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import ExperimentLab from "@/components/experiment-lab";
 import Skills from "@/components/skills";
+import Pitchdeck from "@/components/pitchdeck";
 import KnowledgeGarden from "@/components/knowledge-garden";
 import Experience from "@/components/experience";
 import Certificates from "@/components/certificates";
@@ -24,6 +25,9 @@ export default function Home() {
 
       {/* Games & Prototypes / Experiment Lab */}
       <ExperimentLab />
+
+      {/* Strategic Briefing / Pitch Deck */}
+      <Pitchdeck />
       
       {/* Blog & Essays / Knowledge Garden */}
       <KnowledgeGarden />
@@ -37,7 +41,7 @@ export default function Home() {
       {/* Dynamic Legal Order / Verdict Card */}
       <Verdict />
 
-      {/* Subpoena Contact Form / Contact */}
+      {/* Deposition Contact Form / Contact */}
       <Contact />
 
       {/* Floating Utilities */}
