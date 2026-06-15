@@ -76,7 +76,7 @@ export default function Verdict() {
             <div className="space-y-1">
               <p className="text-[10px] text-zinc-400 font-bold uppercase">SIGNATURE OF THE BENCH:</p>
               <div className="font-handwriting text-red-650 dark:text-red-400 text-lg font-bold">
-                Antigravity AI, Chief Judge
+                Chief Judge of Creativity
               </div>
             </div>
             <div className="case-stamp case-stamp-red transform rotate-[-6deg] font-black text-sm select-none shrink-0 px-6 py-2">
